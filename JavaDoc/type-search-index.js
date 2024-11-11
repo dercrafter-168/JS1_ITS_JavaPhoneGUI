@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"Alle Klassen und Schnittstellen","u":"allclasses-index.html"},{"p":"de.dercrafter","l":"App"},{"p":"de.dercrafter","l":"JavaPhoneGUI"},{"p":"de.dercrafter","l":"Main"}];updateSearchResults();
