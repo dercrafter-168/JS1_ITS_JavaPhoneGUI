@@ -1,5 +1,8 @@
 package de.dercrafter;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.BorderLayout;
@@ -37,6 +40,8 @@ import java.awt.event.ActionListener;
  * @since jdk -23
  */
 public class JavaPhoneGUI extends JFrame implements ActionListener {
+
+    private static final Logger logger = LoggerFactory.getLogger(JavaPhoneGUI.class);
 
     /**
      * The Key 1.
@@ -83,7 +88,7 @@ public class JavaPhoneGUI extends JFrame implements ActionListener {
      */
     JButton key0 = new JButton("0");
     /**
-     * The Key stern.
+     * The Key star.
      */
     JButton keyStern = new JButton("*");
     /**
@@ -139,6 +144,8 @@ public class JavaPhoneGUI extends JFrame implements ActionListener {
         keyDisplayPanel.setLayout(new BorderLayout(20, 20));
         PhonePanel.setLayout(new BorderLayout(200, 200));
 
+        logger.info("set the layouts");
+
         //add buttons
         key1.addActionListener(this);
         key2.addActionListener(this);
@@ -153,6 +160,8 @@ public class JavaPhoneGUI extends JFrame implements ActionListener {
         key0.addActionListener(this);
         keyStern.addActionListener(this);
         call_button.addActionListener(this);
+
+        logger.info("buttons added");
 
         //move buttons to the keypanel
         keyPanel.add(key1);
@@ -170,6 +179,8 @@ public class JavaPhoneGUI extends JFrame implements ActionListener {
         keyPanel.add(keyHashtag);
         keyPanel.add(key0);
         keyPanel.add(keyStern);
+
+        logger.info("buttons to the keypanel moved");
 
         //create the main panel
         displayPanel.add(state);
@@ -222,6 +233,7 @@ public class JavaPhoneGUI extends JFrame implements ActionListener {
             if (!this.display.getText().isEmpty()) {
                 this.state.setText("connected");
                 this.call_button.setText("Hook on");
+                logger.info("connected to the current phone number");
             }
             return;
         }
@@ -232,10 +244,12 @@ public class JavaPhoneGUI extends JFrame implements ActionListener {
                 this.call_button.setText("Hook off");
                 this.state.setText("ready");
                 this.display.setText("");
+                logger.info("disconnected to the current phone number");
             }
             return;
         }
         //user input
         this.display.setText(this.display.getText().concat(num));
+        logger.info("updated the number_display");
     }
 }
