@@ -12,4 +12,6 @@ public class Main {
         logger.info("App class successfully started");
     }
 
+    //Test commit via Intelij
+
 }

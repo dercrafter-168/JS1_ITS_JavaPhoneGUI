@@ -248,8 +248,13 @@ public class JavaPhoneGUI extends JFrame implements ActionListener {
             }
             return;
         }
+
         //user input
-        this.display.setText(this.display.getText().concat(num));
+        @Deprecated
+        //this.display.setText(this.display.getText().concat(num));
+        String tmp = this.display.getText();
+        this.display.setText(tmp+num);
+
         logger.info("updated the number_display");
     }
 }
