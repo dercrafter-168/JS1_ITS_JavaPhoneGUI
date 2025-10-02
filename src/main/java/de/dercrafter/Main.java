@@ -12,9 +12,4 @@ public class Main {
         logger.info("App class successfully started");
     }
 
-    //Test commit via Intellij
-    //test der commit nachrichten
-
-
-
 }
